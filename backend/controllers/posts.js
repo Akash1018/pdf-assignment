@@ -93,7 +93,7 @@ export const sharePost = async (req, res) => {
         return res.status(404).json({ error: 'File not found' });
       }
   
-      const fileUrl = `http://localhost:3000/posts/get/${file._id}`;
+      const fileUrl = `https://pdf-front.onrender.com/posts/get/${file._id}`;
 
       const post = await User.findOne({userId: file.userId});
       
