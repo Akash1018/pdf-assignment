@@ -60,7 +60,7 @@ export const signup = async (req,res) => {
             from: process.env.MAIL,
             to: email,
             subject: 'Hello your OTP',
-            text:  `click on this url to verify yourself https://pdf-front.onrender.com/users/verify?email=${email}&otp=${otp}`,
+            text:  `click on this url to verify yourself https://pdf-backend-7fho.onrender.com/users/verify?email=${email}&otp=${otp}`,
           };
           
           // Send the email
