@@ -60,7 +60,7 @@ export const signup = async (req,res) => {
             from: process.env.MAIL,
             to: email,
             subject: 'Hello your OTP',
-            text:  `click on this url to verify yourself http://localhost:5000/users/verify?email=${email}&otp=${otp}`,
+            text:  `click on this url to verify yourself https://pdf-front.onrender.com/users/verify?email=${email}&otp=${otp}`,
           };
           
           // Send the email
@@ -104,7 +104,7 @@ export const forgot = async (req, res) => {
   if(!user) return res.status(404).json({ message: "User doesn't exist"});
 
   const token = jwt.sign({ email: email}, process.env.TOKEN, { expiresIn: "1h"});
-  const resetUrl = `http://localhost:3000/reset/${token}`;
+  const resetUrl = `https://pdf-front.onrender.com/reset/${token}`;
   const mailOptions = {
     from: 'akash101811@gmail.com',
     to: email,
