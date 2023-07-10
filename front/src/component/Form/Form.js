@@ -11,6 +11,7 @@ const Form = ({currentId, setCurrentId}) => {
     const [postData, setPostData] = useState({
         title:'', message: '', selectedFile: '',
     })
+    const [pdf, setPdf] = useState(false);
     const user = JSON.parse(localStorage.getItem('profile'));
 
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
@@ -23,10 +24,18 @@ const Form = ({currentId, setCurrentId}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(postData.selectedFile)
+        const myArray = postData.selectedFile.split("/");
+        let check = myArray[1];
+        let b = check.split(';');
+        if(b[0] !== "pdf"){
+            if(pdf == false)setPdf(!pdf);
+            return 0;
+        }
         if(currentId){
+            if(pdf == true)setPdf(!pdf);
             dispatch(updatePost(currentId,{ ...postData, name: user?.result?.name}));
         }else {
+            if(pdf == true)setPdf(!pdf);
             dispatch(createPost({ ...postData, name: user?.result?.name}));
         }
         clear();
@@ -65,6 +74,9 @@ const Form = ({currentId, setCurrentId}) => {
                 </div>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
                 <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+                {pdf && <Typography variant="h6">
+                    You can only upload pdf.
+                </Typography>}
             </form>
 
         </Paper>   

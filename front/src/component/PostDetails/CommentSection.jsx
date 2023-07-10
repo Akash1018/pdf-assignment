@@ -17,8 +17,8 @@ const CommentSection = ({ post }) => {
         const finalComment = `${user.result.name}: ${comment}`
         
         const newComments = await dispatch(commentPost(finalComment, post._id));
-       
         setComments(newComments);
+        setComment('');
     }
 
   return (
