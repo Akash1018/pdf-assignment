@@ -26,8 +26,9 @@ const App =() => {
                         element={!user ? <Auth /> : <Navigate to="/posts" />}
                     />
                     <Route path='/verify' element= {<Verify />}/>
-                    <Route path='/reset' element= {<Reset />}/>
+                    <Route path='/reset/:id' element= {<Reset />}/>
                     <Route path='/reset' element= {<Forgot />}/>
+                    
                 </Routes>
            
         </Container>
