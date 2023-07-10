@@ -32,16 +32,16 @@ const Reset = () => {
   return (
     <Container component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={3}>
-      <Typography variant="h6" align="center">
-                    Enter new Password
-      </Typography>
-      <form className={classes.form} onSubmit={handleSubmit} >
-      <Grid container spacing={2}>
-      <Input name="newPassword" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword}/>
-      <Input name="confirmPassword" label="Confirm Password" type={showPassword ? "text" : "password"} handleChange={handleChange}/>
-      <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>Confirm</Button>
-      </Grid>
-      </form>
+        <Typography variant="h6" align="center">
+          Enter new Password
+        </Typography>
+        <form className={classes.form} onSubmit={handleSubmit} >
+        <Grid container spacing={2}>
+          <Input name="newPassword" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword}/>
+          <Input name="confirmPassword" label="Confirm Password" type={showPassword ? "text" : "password"} handleChange={handleChange}/>
+          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>Confirm</Button>
+        </Grid>
+        </form>
       </Paper>
       </Container>
   );

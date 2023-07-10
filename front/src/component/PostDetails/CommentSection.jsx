@@ -15,11 +15,10 @@ const CommentSection = ({ post }) => {
 
     const handleClick = async () => {
         const finalComment = `${user.result.name}: ${comment}`
-
+        
         const newComments = await dispatch(commentPost(finalComment, post._id));
-
-    console.log(newComments)
-
+       
+        setComments(newComments);
     }
 
   return (
@@ -47,7 +46,7 @@ const CommentSection = ({ post }) => {
                             value={comment}
                             onChange={(e) => setComment(e.target.value)}
                     />
-                    <Button style={{marginTop:'10px'}} fullWidth disabled={!comment} variant="contained" color="primary" onClick={handleClick}>
+                    <Button style={{marginTop:'10px'}} fullWidth variant="contained" color="primary" onClick={handleClick}>
                         Comment
                     </Button>
                 </div>)}

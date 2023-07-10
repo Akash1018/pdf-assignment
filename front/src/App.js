@@ -17,9 +17,8 @@ const App =() => {
         <Container maxidth="xl">
             
                 <Routes>
-                    <Route path="/" element={<Navigate to="/posts" />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/posts/:id" element={<Home />} />
-                    <Route path="/posts" element={<Home />} />
                     <Route path="/posts/search" element={<Home />} />
                     <Route path="/posts/get/:id" element={<PostDetails />} />
                     <Route

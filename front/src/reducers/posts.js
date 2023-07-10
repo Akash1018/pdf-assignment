@@ -15,11 +15,7 @@ export default (posts = [], action) => {
         case SHARE:
             return action.payload;
         case COMMENT:
-            return posts.map((post) => {
-                if(post._id === action.payload._id) return action.payload;
-
-                return post;
-            })
+            return posts
         default:
             return posts;
     }
