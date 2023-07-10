@@ -15,7 +15,6 @@ const App =() => {
     return (
       <BrowserRouter>
         <Container maxidth="xl">
-            
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/posts/:id" element={<Home />} />
@@ -28,9 +27,7 @@ const App =() => {
                     <Route path='/verify' element= {<Verify />}/>
                     <Route path='/reset/:id' element= {<Reset />}/>
                     <Route path='/reset' element= {<Forgot />}/>
-                    
                 </Routes>
-           
         </Container>
        </BrowserRouter>  
     )
